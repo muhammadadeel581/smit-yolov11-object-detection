@@ -35,8 +35,8 @@ if uploaded_file is not None:
     if st.button("Run Detection"):
         with st.spinner("Detecting objects..."):
             results = model.predict(source=image, conf=confidence)
-            res_plotted = results[0].plot()
-            res_image = Image.fromarray(res_plotted[:, :, ::-1])
+           res_plotted = results[0].plot()
+st.image(res_plotted, caption="Detected Objects", use_column_width=True)
             
             with col2:
                 st.subheader("Detected Objects")
